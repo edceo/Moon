@@ -1,37 +1,27 @@
 ---
 layout: page
-title: About the Theme
-tags: [about, Jekyll, theme, moon]
-date: 2016-03-21
+title: ED AR-GE Hakkında
+tags: [ar-ge, edsoft, edceo]
+date: 2016-08-30
 comments: false
 ---
     
-<center><a href="http://taylantatli.github.io/Moon"><b>Moon</b></a> is a minimal, one column jekyll theme.</center>
+<center>Kendi Dünyanı Yarat</center>
 
-## Features
-* Minimal, you can focus on your content
-* Responsive
-* Disqus integration
-* Syntax highlighting
-* Optional post image
-* Social icons
-* Page for sharing projects
-* Optional background image
-* Simple navigation menu
-* MathJax support
+## ED AR-GE NEDİR ?
+* EDSOFT bünyesinde yeni teknolojileri kovalayan bir laboratuvar
+* Her türlü fikre açık ve fikirlerin yapılabilmesi için tüm önerilerin sunulduğu bir ortam
+* Open-Source proje deposu
+* Hala da gelişmeye devam eden bir platform
+* Yapıcı kişilerin bulunduğu bir ortam
+* Gençlere önem veren ve tecrübe ile enerjiyi birleştiren bir networking alanı
+* Elbette hayata geçirilmesi için umarsızca çalışılan bir laboratuvar
 
-## Preview
+## BEN KİMİM ?
+Ben küçüklüğünden beri ED peşinde koşan hayat amacını ED'ye adamış bir gencim. Bilgisayar Mühendisliği mezunu oldum. Teknoloji canlısı biriyimdir. Elimden geldiğince aklımdakileri uygulamaya çalışıyorum. Çizmiş olduğum kariyer planımda umarım sapmadan ilerleyeceğim. ED ile de kendimi gerçekleştireceğim diye umuyorum. Ölümsüzlüğün peşindeyim :)
 
-{% capture images %}
-    https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png
-    https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png
-{% endcapture %}
-{% include gallery images=images caption="Screenshots of Moon Theme" cols=2 %}
 
-See a [live version of Moon](http://taylantatli.github.io/Moon) hosted on GitHub.
 
-## Getting Started
 
-To learn how to install and use this theme check out the [Setup Guide](http://taylantatli.me/Moon/moon-theme/) for more information.
-      
-[Install Moon](https://github.com/TaylanTatli/Moon){: .btn}
+
+
