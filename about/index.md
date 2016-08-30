@@ -18,8 +18,7 @@ comments: false
 * Elbette hayata geçirilmesi için umarsızca çalışılan bir laboratuvar
 
 ## BEN KİMİM ?
-Ben küçüklüğünden beri ED peşinde koşan hayat amacını ED'ye adamış bir gencim. Bilgisayar Mühendisliği mezunu oldum. Teknoloji canlısı biriyimdir. Elimden geldiğince aklımdakileri uygulamaya çalışıyorum. Çizmiş olduğum kariyer planımda umarım sapmadan ilerleyeceğim. ED ile de kendimi gerçekleştireceğim diye umuyorum. Ölümsüzlüğün peşindeyim :)
-
+Ben küçüklüğünden beri ED peşinde koşan hayat amacını ED'ye adamış bir gencim. Teknoloji canlısı biriyimdir. Elimden geldiğince aklımdakileri uygulamaya çalışıyorum. Amacım gençlere yol göstermek, farklı fikirler içerisinde bilgi harmanlamak ve hepsinden önemlisi ED'yi gerçekleştirmek. 
 
 
 
