@@ -11,7 +11,9 @@ comments: true
 Docker 101
 -
 Docker, bir sanallaştırma platformudur. Fakat işletim sistemi bazında bir sanallaştırmadan
-değil de uygulama bazında bir sanallaştırmadan bahsediyoruz. Nasıl yani? Önceden
+değil de uygulama bazında bir sanallaştırmadan bahsediyoruz. 
+
+Nasıl yani? Önceden
 sanallaştırma işlemleri işletim sistemi bazında guestOS aracılığıyla yapılıyordu.
 Bir process ayağa kaldırmak için koca işletim sistemi kurulması gerekiyordu. Fakat
 daha sonra container mantığı ortaya atıldı. Bir process için bir işletim sistemini
@@ -49,24 +51,24 @@ inceleyelim.
 
 <img src="https://docs.docker.com/engine/article-img/architecture.svg" />
 
-##### Client
+#### Client
 Client kullanıcının docker'a eriştiği arabirimdir. Kullanıcı burada docker komutlarını
 girer ve docker ile iletişim kurar. 
 
-##### Docker Daemon
+#### Docker Daemon
 Docker Daemon, HOST üzerinde çalışır ve client isteğini karşılar. 
 
-##### Docker Images
+#### Docker Images
 Docker Images, containerların tanımlandığı bir şablondur. Bu şablon içine kullanacağınız
 uygulamayı, çalıştıracağınız komutları vs tanımlarsınız. Image'lar Dockerfile
 denilen bir dosya içinde tanımlanır.
 
-##### Docker Container
+#### Docker Container
 Docker Containerı ise image'ın çalışır bir instance gibi düşünebilirsiniz. Image
 bir class, container ise o classtan bir nesne gibi. Docker container, client aracılığıyla
 yönetilir. 
 
-##### Docker Registry
+#### Docker Registry
 Registry'ler imageların bulunduğu bir kütüphanedir. Tanımlanan image'lar bu serverlar
 üzerinde bulunur.(DockerHub en güzel örnektir.)
 
