@@ -1,4 +1,12 @@
-##MİKROSERVİS MİMARİYE GİRİŞ
+---
+layout: post
+title:  "Microservice"
+date:   2017-01-21
+tag:
+- microservice design
+comments: true
+---
+
 Günümüzde proje mimarileri SOA(Service Oriented Architecture) temeline 
 dayanmaktadır. Ve bu SOA mimarisi monolithic dediğimiz her iş biriminin bir 
 arada bulunduğu bir yaklaşıma inşa edilmiştir. 
@@ -37,7 +45,7 @@ almak oldukça sıkıntılı bir süreç olacaktır.
 Monolithic sistemin bu tarz eksileri SOA mimarisine farklı bir bakış açısı
 getirmeye zorlamış ve mikroservis yaklaşım ortaya atılmıştır.
 
-####Nedir Bu Mikroservis
+### Nedir Bu Mikroservis
 
 
 Mikroservislerin temel amacı her modül birbirinden bağımsız olsun ve tekil bir 
@@ -80,7 +88,7 @@ meydana gelecektir.
 + Bununla beraber modüller birbirleriyle iletişim kurarken aynı business objeleri
 kullanacağından kod tekrarı kaçınılmaz olacaktır. 
 
-####Mikroservis Kalıpları
+### Mikroservis Kalıpları
 
 Mikroservislerin ne olduğunu, avantajlarını ve dezavantajlarını biliyoruz. Şimdi
 ise mikroservislerin gerçeklenme yaklaşımlarını inceleyeceğiz. 
