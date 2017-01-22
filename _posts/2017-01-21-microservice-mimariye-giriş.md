@@ -7,7 +7,7 @@ arada bulunduğu bir yaklaşıma inşa edilmiştir.
 Şöyle bir örnek ile monolithic sistemi açıklayalım. Şekildeki gibi Uber tarzı 
 bir sitemiz olduğunu düşünelim. 
 
-![Alt Text](https://cdn.wp.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part1-1_monolithic-architecture.png)
+![Alt Text](https://cdn.wp.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part1-1_monolithic-architecture.png "şekil 1")
 
 + Sitenin ödeme
 modülü, sürücü yönetim modülü, yolcu yönetim modülü gibi tüm modülleri tek bir çatı ve tek
@@ -57,7 +57,7 @@ zaman kazancı olacaktır.
 frameworkler de birbirinden bağımsızdır. Haliyle her programlama dilini amacına
 göre kullanabilirim.
 
-+ [Polglot Persistence](https://martinfowler.com/bliki/PolyglotPersistence.html)yaklaşımını en ideal şekilde kullanmamızı sağlar.
++ [Polglot Persistence](https://martinfowler.com/bliki/PolyglotPersistence.html "şekil 2")yaklaşımını en ideal şekilde kullanmamızı sağlar.
 
 + Projeye yeni katılan arkadaşımızın sadece bir modülden sorumlu olması 
 projeye uyum sürecini oldukça hızlandıracaktır.
@@ -116,9 +116,15 @@ birbirinden soyutlanır.
 API Gateway, client ile mikroservislerin ve mikroservisler arası iletişimin 
 oluşturulmasını sağlayan çözümlerden biridir. Şekli inceleyecek olursak
 
-![Alt Text](https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAaTAAAAJDJhN2I0YjQyLTdiMTQtNGQ2Yi04NDlmLThjOGFkOWUwNTI0MA.png)
+![Alt Text](https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAaTAAAAJDJhN2I0YjQyLTdiMTQtNGQ2Yi04NDlmLThjOGFkOWUwNTI0MA.png "şekil 3")
 
 Kullanıcı UI ile sisteme bir istek gönderdiği zaman API Gateway üzerinde tanımlanmış
 olan endpointler ile ilgili mikroservise ulaşır ve kullanıcıya response sağlanır. 
+Burada API Gateway'a birden fazla görev de yükleyebiliriz. Mesela authorize işlemini
+gateway üzerinde yaparak yetkisi olmayan servislere erişimini engelleyebiliriz.
+
+Sizlere mikroservisleri anlatmaya çalıştım. Bir dahaki yazıda görüşmek üzere...
+
+İyi çalışmalar
 
 
