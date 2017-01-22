@@ -9,8 +9,8 @@ bir sitemiz olduğunu düşünelim.
 
 ![Alt Text](https://cdn.wp.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part1-1_monolithic-architecture.png)
 
-+ Sitenin authentication
-modülü, ürün sorgulama modülü, satın alma modülü gibi tüm modülleri tek bir çatı ve tek
++ Sitenin ödeme
+modülü, sürücü yönetim modülü, yolcu yönetim modülü gibi tüm modülleri tek bir çatı ve tek
 bir server üzerinde bulunur. Haliyle tüm işlemler tek bir sisteme yüklenir. Bununla beraber
 sistemin karmaşıklığı da çok fazladır. 
 
@@ -42,12 +42,13 @@ getirmeye zorlamış ve mikroservis yaklaşım ortaya atılmıştır.
 ####Nedir Bu Mikroservis
 
 Mikroservislerin temel amacı her modül birbirinden bağımsız olsun ve tekil bir 
-işlem gerçekleştirsin. Bu ne anlama geliyor? Şöyle açıklayalım. E-Ticaret sitesi
-üzerinden aynen devam edelim
+işlem gerçekleştirsin. Bu ne anlama geliyor? Şeklimizi inceleyelim.
 
-+ Sitenin tüm modülleri farklı serverlar üzerinde farklı database'lere bağlı olarak
-inşa edilir. Hepsi birbirinden bağımsızdır. Yani Authentication modülü, ürün sorgulama modülünden bağımsız
-olarak farklı bir server üzerinde bireysel olarak çalışmaktadır. 
+![Alt Text](https://cdn.wp.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part1-2_microservices-architecture.png)
+
+
++ Sistemdeki tüm modüller birbirinden bağımsız hale gelmiştir. Her modül
+ başka bir server üzerinde başka bir database kullanarak çalışıyor olabilir. 
 
 + Her modülün build, deployment süreçleri bağımsız olacağından oldukça
 zaman kazancı olacaktır.
@@ -56,7 +57,7 @@ zaman kazancı olacaktır.
 frameworkler de birbirinden bağımsızdır. Haliyle her programlama dilini amacına
 göre kullanabilirim.
 
-+ [Polglot Persistence](https://martinfowler.com/bliki/PolyglotPersistence.html) yaklaşımını en ideal şekilde kullanmamızı sağlar.
++ [Polglot Persistence](https://martinfowler.com/bliki/PolyglotPersistence.html)yaklaşımını en ideal şekilde kullanmamızı sağlar.
 
 + Projeye yeni katılan arkadaşımızın sadece bir modülden sorumlu olması 
 projeye uyum sürecini oldukça hızlandıracaktır.
@@ -80,6 +81,44 @@ meydana gelecektir.
 + Bununla beraber modüller birbirleriyle iletişim kurarken aynı business objeleri
 kullanacağından kod tekrarı kaçınılmaz olacaktır. 
 
-####
+####Mikroservis Kalıpları
+
+Mikroservislerin ne olduğunu, avantajlarını ve dezavantajlarını biliyoruz. Şimdi
+ise mikroservislerin gerçeklenme yaklaşımlarını inceleyeceğiz. 
+
+Mikroservislerde kalıplar pek çok farklı başlık altında incelenir. Biz sadece Deployment 
+ve API Gateway kalıplarının üzerinde duracağız. 
+
+Deployment Kalıpları 6 tanedir.
+
++ Multiple Service Instance Per Host: Tüm microservisler aynı host üzerinde
+bulunur. Burada her servis ya birer ayrı JVM işlemidir(her servis için bir tomcat
+kullanılması gibi düşünün) ya da aynı JVM'i paylaşırlar.(OSGI bundle gibi düşünün)
+
++ Service Instance Per Host: Her microservis modülü kendi
+host makinesinde bulunur.
+
++ Service Instance Per VM: Her mikroservis VM imajı olarak saklanır ve deploy
+edilir.
+
++ Service Instance Per Container: Her mikroservis bir container imajı olarak
+saklanır ve deploy edilir. 
+
++ Serverless: Altyapı bir bulut sağlayıcısı tarafından sağlanır. Sağlayıcı servisleri
+izole etmek için sanal makine ya da container kullanır fakat bu bilgileri kullanıcıdan
+saklar. Kullanıcı sadece koşturmak istediği yazar ve gönderir. Amazon Lambda
+bu mimariye bir örnektir. (Faas = Function as a Service)
+
++ Service Deployment Platform: Bir deployment platformu oluşturulur. Bu platform
+uygulamalar için otomatik olarak altyapı oluşturur. Böylelikle servisler 
+birbirinden soyutlanır.
+
+API Gateway, client ile mikroservislerin ve mikroservisler arası iletişimin 
+oluşturulmasını sağlayan çözümlerden biridir. Şekli inceleyecek olursak
+
+![Alt Text](https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAaTAAAAJDJhN2I0YjQyLTdiMTQtNGQ2Yi04NDlmLThjOGFkOWUwNTI0MA.png)
+
+Kullanıcı UI ile sisteme bir istek gönderdiği zaman API Gateway üzerinde tanımlanmış
+olan endpointler ile ilgili mikroservise ulaşır ve kullanıcıya response sağlanır. 
 
 
