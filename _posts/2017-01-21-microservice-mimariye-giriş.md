@@ -1,13 +1,11 @@
-MİKROSERVİS MİMARİYE GİRİŞ
---------------
-
+##MİKROSERVİS MİMARİYE GİRİŞ
 Günümüzde proje mimarileri SOA(Service Oriented Architecture) temeline 
 dayanmaktadır. Ve bu SOA mimarisi monolithic dediğimiz her iş biriminin bir 
 arada bulunduğu bir yaklaşıma inşa edilmiştir. 
 Şöyle bir örnek ile monolithic sistemi açıklayalım. Şekildeki gibi Uber tarzı 
 bir sitemiz olduğunu düşünelim. 
 
-![Alt Text](https://cdn.wp.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part1-1_monolithic-architecture.png "şekil 1")
+![Alt Text](https://cdn.wp.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part1-1_monolithic-architecture.png "Monolithic Mimari")
 
 + Sitenin ödeme
 modülü, sürücü yönetim modülü, yolcu yönetim modülü gibi tüm modülleri tek bir çatı ve tek
@@ -41,10 +39,11 @@ getirmeye zorlamış ve mikroservis yaklaşım ortaya atılmıştır.
 
 ####Nedir Bu Mikroservis
 
+
 Mikroservislerin temel amacı her modül birbirinden bağımsız olsun ve tekil bir 
 işlem gerçekleştirsin. Bu ne anlama geliyor? Şeklimizi inceleyelim.
 
-![Alt Text](https://cdn.wp.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part1-2_microservices-architecture.png)
+![Alt Text](https://cdn.wp.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part1-2_microservices-architecture.png "Mikroservis Mimari")
 
 
 + Sistemdeki tüm modüller birbirinden bağımsız hale gelmiştir. Her modül
@@ -57,7 +56,7 @@ zaman kazancı olacaktır.
 frameworkler de birbirinden bağımsızdır. Haliyle her programlama dilini amacına
 göre kullanabilirim.
 
-+ [Polglot Persistence](https://martinfowler.com/bliki/PolyglotPersistence.html "şekil 2")yaklaşımını en ideal şekilde kullanmamızı sağlar.
++ [Polglot Persistence](https://martinfowler.com/bliki/PolyglotPersistence.html)yaklaşımını en ideal şekilde kullanmamızı sağlar.
 
 + Projeye yeni katılan arkadaşımızın sadece bir modülden sorumlu olması 
 projeye uyum sürecini oldukça hızlandıracaktır.
@@ -116,15 +115,21 @@ birbirinden soyutlanır.
 API Gateway, client ile mikroservislerin ve mikroservisler arası iletişimin 
 oluşturulmasını sağlayan çözümlerden biridir. Şekli inceleyecek olursak
 
-![Alt Text](https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAaTAAAAJDJhN2I0YjQyLTdiMTQtNGQ2Yi04NDlmLThjOGFkOWUwNTI0MA.png "şekil 3")
+![Alt Text](https://cdn.wp.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part2-3_api-gateway.png "API Gateway")
 
-Kullanıcı UI ile sisteme bir istek gönderdiği zaman API Gateway üzerinde tanımlanmış
-olan endpointler ile ilgili mikroservise ulaşır ve kullanıcıya response sağlanır. 
-Burada API Gateway'a birden fazla görev de yükleyebiliriz. Mesela authorize işlemini
-gateway üzerinde yaparak yetkisi olmayan servislere erişimini engelleyebiliriz.
+API Gateway, sisteme tek giriş noktası olan bir sunucudur.
+Nesne yönelimli tasarımdaki Facade desenine benzer. API Gateway, 
+iç sistem mimarisini kapsüller ve her client için özel bir API sağlar. 
+Authentication, load balancing, caching gibi diğer görevleri olabilir.
+API Gateway'in  en önemli avantajı client ile servis arasını API aracılığıyla
+sağlamaktır. Böylelikle client ile servis arasında git gel fazla olmaz. Dezavantajı ise
+API Gateway'in en güncel halde olma zorunluluğudur. Çünkü mikroservisler bir geliştirme
+yapıldığı zaman ilk güncellenmesi gereken yer API Gateway'dir. Bu da API Gateway'in 
+bir süre iş göremez halde olması gerektiğini gösterir.
 
 Sizlere mikroservisleri anlatmaya çalıştım. Bir dahaki yazıda görüşmek üzere...
 
 İyi çalışmalar
+
 
 
